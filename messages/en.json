@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "MultiWeb",
+    "title": "Acme",
     "description": "Mobile-first, multi-language Next.js template."
   },
   "Nav": {
@@ -9,7 +9,7 @@
     "contact": "Contact"
   },
   "Hero": {
-    "title": "Welcome to the MultiWeb template",
+    "title": "Welcome to the Acme",
     "subtitle": "Responsive, fast, and multilingual base."
   },
   "AboutPage": {
@@ -31,7 +31,7 @@
     }
   },
   "Footer": {
-    "text": "© 2024 MultiWeb. All rights reserved."
+    "text": "© 2024. All rights reserved."
   }
 }
 

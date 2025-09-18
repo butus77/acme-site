@@ -30,7 +30,7 @@ export default function HeaderClient({locale, labels}: Props) {
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur border-b">
       <div className="flex items-center justify-between py-3 mx-auto max-w-5xl px-4">
-        <a href={homeHref} className="font-bold">MultiWeb</a>
+        <a href={homeHref} className="font-bold">Acme</a>
 
         {/* Asztali menü */}
         <nav className="hidden md:flex items-center gap-4 text-sm">
@@ -57,7 +57,7 @@ export default function HeaderClient({locale, labels}: Props) {
 
               <div className="grid gap-3 mt-8">
                 <a className="font-bold mb-2" href={homeHref} onClick={() => setOpen(false)}>
-                  MultiWeb
+                  Acme
                 </a>
 
                 <Separator />

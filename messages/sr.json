@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "MultiWeb",
+    "title": "Acme",
     "description": "Мобил-фёрст, вишејезични Next.js шаблон."
   },
   "Nav": {
@@ -9,7 +9,7 @@
     "contact": "Контакт"
   },
   "Hero": {
-    "title": "Добродошли у MultiWeb шаблон",
+    "title": "Добродошли у Acme",
     "subtitle": "Респонзивна, брза и вишејезична основа."
   },
   "AboutPage": {
@@ -31,7 +31,7 @@
     }
   },
   "Footer": {
-    "text": "© 2024 MultiWeb. Сва права задржана."
+    "text": "© 2024. Сва права задржана."
   }
 }
 

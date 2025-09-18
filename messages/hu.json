@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "MultiWeb",
+    "title": "Acme",
     "description": "Mobil-first, többnyelvű Next.js sablon."
   },
   "Nav": {
@@ -9,7 +9,7 @@
     "contact": "Kapcsolat"
   },
   "Hero": {
-    "title": "Üdv a MultiWeb sablonban",
+    "title": "Üdv az Acme-ban",
     "subtitle": "Reszponzív, gyors és többnyelvű alap."
   },
   "AboutPage": {
@@ -31,6 +31,6 @@
     }
   },
   "Footer": {
-    "text": "© 2024 MultiWeb. Minden jog fenntartva."
+    "text": "© 2024. Minden jog fenntartva."
   }
 }

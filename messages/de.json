@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "MultiWeb",
+    "title": "Acme",
     "description": "Mobile-First, mehrsprachiges Next.js-Template."
   },
   "Nav": {
@@ -9,7 +9,7 @@
     "contact": "Kontakt"
   },
   "Hero": {
-    "title": "Willkommen beim MultiWeb-Template",
+    "title": "Willkommen beim Acme",
     "subtitle": "Responsiv, schnell und mehrsprachig."
   },
   "AboutPage": {

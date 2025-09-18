@@ -1,4 +1,4 @@
-# MultiWeb – Next.js 15, TypeScript, App Router, Tailwind v4, shadcn/ui, next-intl
+# Acme – Next.js 15, TypeScript, App Router, Tailwind v4, shadcn/ui, next-intl
 
 Mobil-first, többnyelvű (hu/sr/de/en) weboldal-sablon. Prod-ready alapok: i18n, SEO (sitemap, robots, hreflang), OG/Twitter meta, JSON-LD, reszponzív UI (shadcn/ui), sötét mód, kapcsolat űrlap.
 
@@ -107,7 +107,7 @@ public/
   ```json
   {
     "Nav": { "home": "Kezdőlap", "about": "Rólunk", "contact": "Kapcsolat" },
-    "Hero": { "title": "Üdv a MultiWeb sablonban", "subtitle": "Reszponzív, gyors, többnyelvű alap." }
+    "Hero": { "title": "Üdv a Acme sablonban", "subtitle": "Reszponzív, gyors, többnyelvű alap." }
   }
   ```
 - **Új nyelv hozzáadása**:

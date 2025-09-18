@@ -21,7 +21,7 @@ export async function generateMetadata({params}:{params: Promise<{locale: string
 
   const base = getBaseUrl();
   const url = `${base}/${l}`;
-  const title = 'MultiWeb';
+  const title = 'Acme';
   const description = 'Mobil-first, többnyelvű Next.js sablon.';
 
   return {
@@ -34,7 +34,7 @@ export async function generateMetadata({params}:{params: Promise<{locale: string
     openGraph: {
       type: 'website',
       url,
-      siteName: 'MultiWeb',
+      siteName: 'Acme',
       title,
       description,
       images: [{url: `${base}/og.png`, width: 1200, height: 630}]
@@ -68,14 +68,14 @@ export default async function LocaleLayout(
   const orgJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'MultiWeb',
+    name: 'Acme',
     url: `${base}/${l}`,
     logo: `${base}/logo.png`
   };
   const siteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'MultiWeb',
+    name: 'Acme',
     url: `${base}/${l}`
   };
 
@@ -101,16 +101,16 @@ function Footer({locale}: {locale: Locale}) {
   return (
     <footer className="py-10 text-sm text-neutral-500">
       <div className="flex items-center gap-3">
-        <span>© {new Date().getFullYear()} MultiWeb</span>
+        <span>© {new Date().getFullYear()} Acme</span>
         <a href={`/${locale}`} className="flex items-center gap-2 font-bold">
           <Image
             src="/logo40x40b.png"
-            alt="MultiWeb logo"
+            alt="Acme logo"
             width={40}
             height={40}
             priority
           />
-          <span className="sr-only">MultiWeb</span>
+          <span className="sr-only">Acme</span>
         </a>
       </div>
     </footer>
