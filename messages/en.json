@@ -1,0 +1,38 @@
+{
+  "Meta": {
+    "title": "MultiWeb",
+    "description": "Mobile-first, multi-language Next.js template."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "Welcome to the MultiWeb template",
+    "subtitle": "Responsive, fast, and multilingual base."
+  },
+  "AboutPage": {
+    "title": "About",
+    "body": "This is a basic multi-language template for Next.js."
+  },
+  "Contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending…",
+    "success": "Thanks! We received your message.",
+    "errors": {
+      "name_short": "Name is too short",
+      "email_invalid": "Invalid email",
+      "message_short": "Please write at least 10 characters"
+    }
+  },
+  "Footer": {
+    "text": "© 2024 MultiWeb. All rights reserved."
+  }
+}
+
+

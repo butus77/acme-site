@@ -1,0 +1,36 @@
+{
+  "Meta": {
+    "title": "MultiWeb",
+    "description": "Mobil-first, többnyelvű Next.js sablon."
+  },
+  "Nav": {
+    "home": "Kezdőlap",
+    "about": "Rólunk",
+    "contact": "Kapcsolat"
+  },
+  "Hero": {
+    "title": "Üdv a MultiWeb sablonban",
+    "subtitle": "Reszponzív, gyors és többnyelvű alap."
+  },
+  "AboutPage": {
+    "title": "Rólunk",
+    "body": "Ez egy alap többnyelvű sablon Next.js-hez."
+  },
+  "Contact": {
+    "title": "Kapcsolat",
+    "name": "Név",
+    "email": "E-mail",
+    "message": "Üzenet",
+    "send": "Küldés",
+    "sending": "Küldés…",
+    "success": "Köszönjük! Üzeneted megkaptuk.",
+    "errors": {
+      "name_short": "A név túl rövid",
+      "email_invalid": "Érvénytelen e-mail",
+      "message_short": "Írj legalább 10 karaktert"
+    }
+  },
+  "Footer": {
+    "text": "© 2024 MultiWeb. Minden jog fenntartva."
+  }
+}
