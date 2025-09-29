@@ -40,13 +40,20 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
         {/* Engedjük mindkét színsémát a böngészőnek */}
         <meta name="color-scheme" content="dark light" />
       </head>
-      <body className={`${inter.variable} font-sans`}>
+      {/* Itt adunk globális hátteret */}
+      <body className={`${inter.variable} font-sans site-bg bg-right-bottom bg-no-repeat bg-contain`}>
+        {/* Ha az overlay pszeudoelem helyett inkább külön div kell: */}
+        <div className="fixed inset-0 bg-black/40 pointer-events-none" aria-hidden="true" /> 
+        
         <ThemeProvider>
-          {children}
+          <div className="relative z-10">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
   );
+
 }
 // A RootLayout a teljes alkalmazás gyökér elrendezése
 // A Google Fonts Inter betűtípust használja, a latin és latin-ext karakterkészlettel

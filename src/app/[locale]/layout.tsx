@@ -7,7 +7,7 @@ import Header from '@/components/Header';
 import {getBaseUrl} from '@/lib/site';
 import ToasterPortal from '@/components/ToasterPortal';
 import JsonLd from '@/components/JsonLd';
-import Image from 'next/image';
+import Footer from '@/components/Footer';
 
 /** Build: mely locale-ok léteznek (SSG) */
 export async function generateStaticParams() {
@@ -15,8 +15,10 @@ export async function generateStaticParams() {
 }
 
 /** SEO / hreflang + OpenGraph + Twitter (nyelvspecifikus URL) */
-export async function generateMetadata({params}:{params: Promise<{locale: string}>}) {
-  const {locale: raw} = await params;
+export async function generateMetadata(
+  {params}: {params: Promise<{locale: string}>}
+) {
+  const {locale: raw} = await params; // <-- await!
   const l: Locale = (locales as readonly string[]).includes(raw) ? (raw as Locale) : defaultLocale;
 
   const base = getBaseUrl();
@@ -48,11 +50,11 @@ export async function generateMetadata({params}:{params: Promise<{locale: string
   };
 }
 
-/** Locale layout – NINCS <html>/<body> itt, az a root layoutban van */
+/** Locale layout – sticky footer grid */
 export default async function LocaleLayout(
   {children, params}: {children: React.ReactNode; params: Promise<{locale: string}>}
 ) {
-  const {locale: raw} = await params;
+  const {locale: raw} = await params; // <-- await!
   const l: Locale = (locales as readonly string[]).includes(raw) ? (raw as Locale) : defaultLocale;
 
   // Fordítások betöltése
@@ -65,29 +67,18 @@ export default async function LocaleLayout(
 
   // Strukturált adatok
   const base = getBaseUrl();
-  const orgJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Acme',
-    url: `${base}/${l}`,
-    logo: `${base}/logo.png`
-  };
-  const siteJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Acme',
-    url: `${base}/${l}`
-  };
+  const orgJsonLd = {'@context':'https://schema.org','@type':'Organization',name:'Acme',url:`${base}/${l}`,logo:`${base}/logo.png`};
+  const siteJsonLd = {'@context':'https://schema.org','@type':'WebSite',name:'Acme',url:`${base}/${l}`};
 
   return (
     <NextIntlClientProvider locale={l} messages={messages}>
       <JsonLd data={orgJsonLd} />
       <JsonLd data={siteJsonLd} />
 
-      <div className="mx-auto max-w-5xl px-4">
+      {/* STICKY LAYOUT: Header (auto) / Main (1fr) / Footer (auto) */}
+      <div className="mx-auto max-w-5xl px-4 min-h-dvh grid grid-rows-[auto_1fr_auto]">
         <Header locale={l} />
         <main className="py-8">{children}</main>
-        {/* IDE: átadjuk a locale-t a Footernek */}
         <Footer locale={l} />
       </div>
 
@@ -95,24 +86,14 @@ export default async function LocaleLayout(
     </NextIntlClientProvider>
   );
 }
+// A LocaleLayout komponens a locale-specifikus oldalak layoutját határozza meg
+// A layout tartalmaz egy fejlécet (Header), egy fő tartalmi részt (main) és egy láblécet (Footer)
+// A layout rácsos elrendezést használ, ahol a fejléc és a lábléc automatikusan igazodik a tartalomhoz, míg a fő tartalom kitölti a rendelkezésre álló helyet
+// A komponens betölti a megfelelő fordítási üzeneteket a locale alapján, és ha a locale nem létezik, akkor egy 404-es oldalt jelenít meg
+// A komponens beállítja az oldal metaadatait is, beleértve a SEO-t, hreflang-et, OpenGraph-et és Twitter kártyákat
+// A JsonLd komponens segítségével strukturált adatokat ad az oldalhoz az Organization és WebSite sémák szerint
+// A ToasterPortal komponens lehetővé teszi értesítések megjelenítését az oldalon
+// A getBaseUrl függvény segítségével dinamikusan állítja be az alap URL-t a környezettől függően (fejlesztői vagy éles környezet)
+// A generateStaticParams függvény meghatározza, hogy mely locale-ok számára generáljon statikus oldalakat a build során
+// A generateMetadata függvény dinamikusan állítja be az oldal metaadatait a locale alapján 
 
-/** Footer: locale propot kér, hogy a logós link a megfelelő nyelvre mutasson */
-function Footer({locale}: {locale: Locale}) {
-  return (
-    <footer className="py-10 text-sm text-neutral-500">
-      <div className="flex items-center gap-3">
-        <span>© {new Date().getFullYear()} Acme</span>
-        <a href={`/${locale}`} className="flex items-center gap-2 font-bold">
-          <Image
-            src="/logo40x40b.png"
-            alt="Acme logo"
-            width={40}
-            height={40}
-            priority
-          />
-          <span className="sr-only">Acme</span>
-        </a>
-      </div>
-    </footer>
-  );
-}

@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+/* globals.css */
+.site-bg {
+   @apply bg-contain bg-center bg-no-repeat;
+
+  background-image: url('/thumbnail_large.webp');
+
+  background-size: 200px auto;
+  padding: 15px;
+}
+@media (max-width: 768px) {
+  .site-bg {
+    background-image: url('/thumbnail_large.webp');
+    @apply bg-center;
+  }
+}
+.site-bg-overlay {
+  @apply bg-background/70 dark:bg-background/50;
+}
